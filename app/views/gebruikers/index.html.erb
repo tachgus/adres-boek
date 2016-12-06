@@ -1,0 +1,32 @@
+<style>
+  .ui-state-highlight { height: 1.5em; line-height: 1.2em; }
+</style>
+<p id="notice"><%= notice %></p>
+
+<h1>Adresboek</h1>
+
+<table id="adresboektable" class="sortable tablesorter">
+  <thead>
+    <tr>
+      <th>Voornaam</th>
+      <th>Achternaam</th>
+      <th>Telefoonnummer</th>
+    </tr>
+  </thead>
+  <tbody class="adresboek">
+  <% @gebruikers.each do |gebruiker| %>
+      <tr class="<%= cycle('list_line_odd', 'list_line_even') %> adresrow ui-state-default">
+        <td class="gebruiker_voornaam">
+          <%= gebruiker.voornaam %>
+        </td>
+        <td class="gebruiker_achternaam">
+          <%= gebruiker.achternaam %>
+        </td>
+        <td class="gebruiker_telefoonnummer">
+          <%= gebruiker.telefoonnummer %>
+        </td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>
+
